@@ -1,0 +1,15 @@
+<h1>New Artist</h1>
+<p><%= form_for @artist do |f|%>
+ <%= f.label :name %>
+<%= f.text_field :name %></p>
+
+<p> Name genre:   <% f.label :genre %>
+<%= f.text_field :genre %></p>
+
+<p> Record company artist: <%= f.label :rec_company %>
+<%= f.text_field :rec_company %></p>
+
+<p><%= f.label :poster %>
+  <%= f.file_field :poster %>
+  <%= f.submit "add" %></p>
+  <% end %>
