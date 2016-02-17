@@ -1,0 +1,9 @@
+<ul><strong><%= artist.name %></strong></ul>
+<li><%= artist.name %></li>
+<li><%= artist.genre %></li>
+<li><%= artist.rec_company %></li>
+<%= link_to "artist", artist %>
+<%= link_to "edit", edit_artist_path(artist)%>
+<%= link_to 'Delete', artist_path(artist),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
