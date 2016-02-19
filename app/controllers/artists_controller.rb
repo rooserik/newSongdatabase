@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
 
   def update
     @artist=Artist.find(params[:id])
-    if @artist=Artist.update(artist_params)
+    if @artist=Artist.update(params[:id],artist_params)
       redirect_to @artist, notice: "artist succesfully edited"
     else
       render :edit, notice:"error, try again"

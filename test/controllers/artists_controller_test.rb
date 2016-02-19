@@ -18,19 +18,19 @@ class ArtistsControllerTest < ActionController::TestCase
 
     test "should create artist" do
         assert_difference('Artist.count') do
-          artist :create, artist: { name: @artist.content, genre: @artist.genre, rec_company: @artist.rec_company }
+          post :create, artist: { name: @artist.name, genre: @artist.genre, rec_company: @artist.rec_company }
         end
 
         assert_redirected_to artist_path(assigns(:artist))
       end
 
-      # test "should show post" do
-      #   get :show, id: @post
-      #   assert_response :success
-      # end
-      #
-      # test "should get edit" do
-      #   get :edit, id: @post
-      #   assert_response :success
-      # end
+      test "should show artist" do
+        get :show, id: @artist
+        assert_response :success
+      end
+
+      test "should get edit" do
+        get :edit, id: @artist
+        assert_response :success
+      end
 end
